@@ -1,0 +1,90 @@
+@mixin position-responsive() {
+  @media (min-width: 576px) and (max-width: 992px) {
+    width: 70%;
+    margin: auto;
+  }
+  @media (min-width: 992px) {
+    width: 55%;
+    margin: auto;
+  }
+}
+
+@mixin btn-tags($mr: 0.4em, $mb: 0.5em) {
+  .btn-tags {
+    a {
+      background-color: $background;
+      color: $text;
+      padding: 0.3em 1em;
+      border-radius: 8px;
+      font-size: 0.7em;
+      margin-right: $mr;
+      margin-bottom: $mr;
+    }
+  }
+}
+@mixin card-post($p-top-bottom: 0.7em, $p-left-right: 0.8em) {
+  .card-post {
+    background-color: $soft;
+    border-radius: 10px;
+    padding: $p-top-bottom $p-left-right;
+    margin-bottom: 0.7em;
+    .info {
+      .uploader {
+        margin-left: 0.5em;
+        a > p {
+          font-size: 0.9em;
+          word-break: break-all;
+          margin-bottom: -0.3em;
+          font-weight: 600;
+        }
+        small {
+          font-size: 0.8em;
+          color: #45b250;
+        }
+        .info-post {
+          margin-top: 0.2em;
+          a {
+            font-weight: 400;
+            font-size: 0.7em;
+          }
+        }
+      }
+    }
+    // in index
+    .add {
+      i {
+        &.bi-bookmark {
+          color: #4b6dc0;
+        }
+        &.bi-heart {
+          color: red;
+        }
+        margin: 0 0.1em;
+        font-size: 1.4em;
+      }
+      div > a {
+        display: block;
+        margin-top: 1em;
+        color: darken($color: #fff, $amount: 20);
+        font-size: 0.7em;
+      }
+    }
+    // action in profil
+    .action {
+      button {
+        font-size: 0.8em;
+      }
+      div > a {
+        display: block;
+        margin-top: 1em;
+        color: darken($color: #fff, $amount: 20);
+        font-size: 0.7em;
+      }
+    }
+    .thumbnail {
+      border-radius: 12px;
+      margin-top: 1em;
+    }
+    @include btn-tags();
+  }
+}
