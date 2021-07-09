@@ -20,7 +20,7 @@ export default {
     '~/assets/scss/app.scss'
   ],
   script: [
-    '~/node-modules/bootstrap/dist/js/bootstrapp.min.js'
+    '~/node-modules/bootstrap/dist/js/bootstrap.min.js'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
