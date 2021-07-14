@@ -9,16 +9,16 @@
           <i class="bi bi-house-door"></i>
           <small>Home</small>
         </nuxt-link>
-        <a class="nav-link" href="chat.html">
+        <nuxt-link class="nav-link" to="/question">
           <i class="bi bi-chat"></i>
           <small>Question</small>
-        </a>
+        </nuxt-link>
         <a class="nav-link" href="#">
           <small></small>
         </a>
-        <a class="nav-link add-post" href="add-post.html">
+        <nuxt-link class="nav-link add-post" to="/add">
           <i class="bi bi-plus"></i>
-        </a>
+        </nuxt-link>
         <a class="nav-link" href="storage.html">
           <i class="bi bi-person"></i>
           <small>Storage</small>
