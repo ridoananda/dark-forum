@@ -152,10 +152,13 @@ body {
 // PROFIL
 #profil {
   padding-bottom: 3em;
-  i.back {
+  .back {
+    z-index: 111;
     position: absolute;
-    font-size: 1.4em;
-    margin: 0.4em;
+    font-size: 1.7em;
+    cursor: pointer;
+    margin-left: 0.4em;
+    margin-top: 0.4em;
   }
   .info-user {
     position: relative;

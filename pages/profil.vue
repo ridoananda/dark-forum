@@ -14,7 +14,7 @@
             />
           </div>
           <div class="wrapper">
-            <a href="edit-profil.html" class="btn btn-edit">Edit profil</a>
+            <nuxt-link to="/edit-profil" class="btn btn-edit">Edit profil</nuxt-link>
             <h5 class="your-post">Your post</h5>
             <div class="card-post">
               <div class="d-flex justify-content-between">

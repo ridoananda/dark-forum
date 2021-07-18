@@ -6,12 +6,7 @@
           <div class="navbar-atas fixed-top">
             <div class="d-flex justify-content-between align-items-center">
               <h3 class="fw-bold">DarkForum</h3>
-              <img
-                src="~/assets/img/logo.png"
-                width="45"
-                height="45"
-                class="rounded-circle logo"
-              />
+              <i class="bi bi-bell h4"></i>
             </div>
             <div class="swipe">
               <a href="#" class="btn active"> All Post </a>
@@ -33,7 +28,9 @@
 </template>
 
 <script>
-export default {}
+export default {
+
+}
 </script>
 
 <style lang="scss"></style>

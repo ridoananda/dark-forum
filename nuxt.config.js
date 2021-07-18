@@ -20,7 +20,7 @@ export default {
     '~/assets/scss/app.scss',
   ],
   router: {
-    base: '/dark-forum/dist/',
+    base: '/dist',
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -63,5 +63,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extractCSS: true
   }
 }

@@ -19,9 +19,9 @@
         <nuxt-link class="nav-link add-post" to="/add">
           <i class="bi bi-plus"></i>
         </nuxt-link>
-        <a class="nav-link" href="storage.html">
+        <a class="nav-link" href="/war">
           <i class="bi bi-person"></i>
-          <small>Storage</small>
+          <small>War</small>
         </a>
         <nuxt-link class="nav-link" to="profil">
           <i class="bi bi-person"></i>
