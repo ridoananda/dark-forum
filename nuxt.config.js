@@ -11,21 +11,24 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap' },
-    ]
+    ],
+    script: [
+      {
+        src: 'https://code.iconify.design/1/1.0.7/iconify.min.js'
+      }
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '~/assets/scss/_variable.scss',
-    '~/assets/scss/app.scss',
-  ],
+
   router: {
     base: '/dist',
+    linkActiveClass: 'active'
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/bootstrap-icon.js'
+    '~/plugins/bootstrap.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -46,6 +49,7 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    'bootstrap-vue/nuxt'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

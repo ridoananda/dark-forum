@@ -19,16 +19,16 @@
           </nuxt-link>
           <div class="info-post">
             <a href="/post" class="text-decoration-none text">
-              <i class="bi bi-chat-square-text"></i> 2 comments
+              <b-icon icon="chat-square-text"></b-icon> 2 comments
             </a>
           </div>
         </div>
       </div>
       <div class="add">
         <span>
-          <i class="bi bi-bookmark"></i>
+          <b-icon icon="bookmark"></b-icon>
         </span>
-        <i class="bi bi-heart"></i>
+        <b-icon icon="heart"></b-icon>
         <div>
           <nuxt-link to="/post" class="text-decoration-none text">
             1 Juli 2021

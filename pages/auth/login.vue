@@ -6,7 +6,7 @@
         <div class="col-sm-10 col-md-7 col-lg-6">
           <h3 class="text-center fw-bold">DarkForum</h3>
           <div class="d-flex justify-content-center">
-            <img src="img/logo.png" alt="Logo" class="logo" />
+            <img src="~/assets/img/logo.png" alt="Logo" class="logo" />
           </div>
           <form method="post" action="" class="form">
             <h4 class="text-center fw-bold">Login</h4>
@@ -21,7 +21,7 @@
                 class="form-control mb-1"
                 placeholder="Password"
               />
-              <a href="forgot-password.html">Forgot password ?</a>
+              <nuxt-link to="forgot-password">Forgot password ?</nuxt-link>
             </div>
             <div class="d-flex justify-content-center mt-3">
               <button type="button" class="btn btn-login">Login</button>
@@ -30,7 +30,7 @@
           <div class="d-flex justify-content-center mt-3 register">
             <div>
               Don't have an account?
-              <a class="d-block" href="register.html"> Register here </a>
+              <nuxt-link class="d-block" to="register"> Register here </nuxt-link>
             </div>
           </div>
         </div>

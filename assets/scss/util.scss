@@ -1,0 +1,24 @@
+img.logo {
+  background-color: $background;
+  z-index: 11;
+}
+
+.btn-shadow {
+  &:hover {
+    color: $text;
+  }
+  background-color: $soft;
+  border-radius: 15px;
+  display: block;
+  padding: 0.4em 3em;
+  box-shadow: 0 3px 10px $soft;
+  color: $text;
+  font-weight: bold;
+}
+
+.bg-soft {
+	background: $soft;
+}
+.bg-background {
+	background: $background;
+}
