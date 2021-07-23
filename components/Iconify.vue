@@ -1,5 +1,5 @@
 <template>
-	<div class="icon">
+	<div class="icon d-flex text-center justify-content-center">
 		<Icon :icon="icon" class="iconify" />
 	</div>
 </template>
@@ -31,3 +31,13 @@ export default {
 	}
 }
 </script>
+
+<style lang="scss" scoped>
+	// svg.iconify {
+	// 	margin-top: 0;
+	// 	font-size: 10em !important;
+	// }
+	// svg.iconify {
+	// 	vertical-align: unset;
+	// }
+</style>

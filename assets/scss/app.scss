@@ -11,12 +11,6 @@ body {
   }
 }
 @include card-post();
-.header {
-	background: $soft;
-	padding: 2em 1em;
-	border-bottom-right-radius: 18px;
-	border-bottom-left-radius: 18px;
-}
 
 // PROFIL
 #profil {

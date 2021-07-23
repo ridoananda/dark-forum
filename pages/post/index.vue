@@ -28,20 +28,20 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div>
                   <div class="d-flex align-items-center">
-                    <h5 class="mt-2 font-weight-bold">Bypass 404 Forbidden! You don't have permisson to into her heart!</h5>
+                    <h5 class="post-title mt-2 font-weight-bold">Bypass 404 Forbidden! You don't have permisson to into her heart!</h5>
                   </div>
                 </div>
                 <div class="love-comment-bookmark w-100 text-right">
-                  
+                  <span class="comments mr-1">
+                    <b-icon icon="chat-square-text"></b-icon> 3
+                  </span>
                   <span class="love bg-background mr-2">
                     <b-icon icon="heart"></b-icon> 16
                   </span>
                   <span class="bookmark bg-background">
                     <b-icon icon="bookmark"></b-icon>
                   </span>
-                  <div class="comments mt-2">
-                    <b-icon icon="chat-square-text"></b-icon> 3 comments
-                  </div>
+                  
                   
                 </div>
               </div>
@@ -173,7 +173,7 @@
     .date {
       text-align: center;
       margin-top: .4em;
-      font-size: .5em;
+      font-size: .4em;
       line-height: 1.6em;
       text-shadow: 1px 1px rgba(0,0,0,0.5);
       div {
@@ -195,6 +195,9 @@
     background-color: $soft;
     border-top-right-radius: 2em;
     border-top-left-radius: 2em;
+    h5.post-title {
+      font-size: 1.1em;
+    }
     .uploader {
       span {
         display: block;

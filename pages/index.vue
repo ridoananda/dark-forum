@@ -5,7 +5,7 @@
         <div class="col-sm-10 col-lg-8 px-0 px-md-2">
           <div class="navbar-atas fixed-top">
             <div class="d-flex justify-content-between align-items-center">
-              <h3 class="font-weight-bold">DarkForum</h3>
+              <h4 class="font-weight-bold">DarkForum</h4>
               <div class="notification" @click="$router.push('/notification')">
                 <Iconify icon="ci-notification"/>
                 <div class="count-notif">3</div>
@@ -58,17 +58,19 @@ export default {
       position: relative;
       cursor: pointer;
       .icon {
-        font-size: 1.8em;
+        font-size: 1.7em;
       }
       .count-notif {
         position: absolute;
-        font-size: .6em;
-        top: 10px;
+        font-size: .5em;
+        top: 0;
+        left: 1.2em;
         right: 0;
         border-radius: 50%;
         background: red;
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
+        margin: auto;
         padding: .05em .5em;
       }
     }
@@ -102,10 +104,10 @@ export default {
             margin: auto;
           }
         }
-        margin-right: 0.5em;
+        margin-right: 0.4em;
         border-radius: 12px;
         color: darken($color: $text, $amount: 20);
-        font-size: 0.9em;
+        font-size: 0.8em;
         padding: 0.4em 1.2em;
         font-weight: 600;
         background-color: transparent;

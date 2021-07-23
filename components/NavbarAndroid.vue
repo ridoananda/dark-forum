@@ -45,7 +45,7 @@ nav.navbar-bawah {
   }
   background-color: $navbar;
   text-align: center;
-  padding:0 0 0 0;
+  padding:.4em 0 0 0;
   border-top-left-radius: 18px;
   border-top-right-radius: 18px;
 
@@ -62,7 +62,7 @@ nav.navbar-bawah {
       .icon {
         font-size: 2.4em;
         position: absolute;
-        top: -.22em;
+        top: .15em;
         left: 0;
         right: 0;
         margin: auto;
@@ -78,7 +78,6 @@ nav.navbar-bawah {
     small {
       display: block;
       font-size: 0.7em;
-      margin-top: -2px;
     }
   }
 }
