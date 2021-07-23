@@ -1,8 +1,4 @@
-@import '_variable.scss';
-@import '_mixin.scss';
-@import 'auth.scss';
-@import 'navbar.scss';
-@import 'util.scss';
+@import 'bootstrap.scss';
 
 body {
   scroll-behavior: smooth;
@@ -14,149 +10,14 @@ body {
     color: $text;
   }
 }
-
-  // HOME
-#home {
-  padding-top: 9.8em;
-  padding-bottom: 4.5em;
-  .navbar-atas {
-    @include position-responsive();
-    box-shadow: 0px 1px 10px opacify($color: #000000, $amount: 0.6);
-    background: $soft;
-    padding: 1.2em 1em 0.2em 1em;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    margin-bottom: 1.2em;
-    .iconify {
-        font-size: 2em;
-    }
-    .swipe {
-      &::-webkit-scrollbar {
-        display: none;
-      }
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-      margin-top: 0.5em;
-      padding: 0.25em 0.3em;
-      white-space: nowrap;
-      overflow-y: hidden;
-      height: 4em;
-      overflow-x: scroll;
-      a {
-        &.active {
-          background-color: $bginput;
-          color: $text;
-          position: relative;
-          &::after {
-            content: '';
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: $bginput;
-            border-radius: 50%;
-            bottom: -18px;
-            left: 0;
-            right: 0;
-            margin: auto;
-          }
-        }
-        margin-right: 0.5em;
-        border-radius: 12px;
-        color: darken($color: $text, $amount: 20);
-        font-size: 0.9em;
-        padding: 0.4em 1.2em;
-        font-weight: 600;
-        background-color: transparent;
-        border: 2px solid $bginput;
-      }
-    }
-  }
-  @include card-post();
+@include card-post();
+.header {
+	background: $soft;
+	padding: 2em 1em;
+	border-bottom-right-radius: 18px;
+	border-bottom-left-radius: 18px;
 }
 
-// DETAIL POST
-#detail-post {
-  padding-bottom: 3em;
-  .back {
-    position: absolute;
-    font-size: 1.7em;
-    cursor: pointer;
-    margin-left: 0.4em;
-    margin-top: 0.4em;
-  }
-  .thumbnail-post {
-  	border-bottom-right-radius: 2em;
-  	border-bottom-left-radius: 2em;
-  	// box-shadow: 0px 55px 25px rgba(0, 0, 0, 0.58);
-  }
-  .info-detail {
-  	margin-top: 1.8em;
-  	padding-top: 1em;
-  	padding-bottom: 2em;
-    position: relative;
-    background-color: $soft;
-    border-top-right-radius: 2em;
-    border-top-left-radius: 2em;
-    .uploader {
-      span {
-        display: block;
-        font-size: 0.9em;
-        line-height: 1.2em;
-        word-break: break-all;
-        color: $text;
-        font-weight: 500;
-      }
-      div {
-        color: #45b250;
-        font-size: 0.7em;
-      }
-    }
-    .love-comment-bookmark {
-    	@include bg-backgound(.3em, .3em, .5em);
-      span,div {
-        margin-right: 0.5em;
-        cursor: pointer;
-        font-size: 0.9em;
-      }
-    }
-    p.text {
-      font-size: 0.9em;
-      color: $text;
-    }
-    .header-comment {
-      font-size: 1em;
-    }
-    .tags {
-    	span {
-    		font-weight: 600;
-    	}
-    }
-    @include btn-tags();
-  }
-  .comments {
-    .wrap-comment {
-      background: $background;
-      padding: 0.5em 0.8em;
-      border-radius: 18px;
-      .username {
-        font-size: 0.9em;
-        color: $text2;
-        font-weight: 600;
-        &.is_posted {
-          background-color: $soft;
-          color: $text;
-          padding: 0.2em 0.5em;
-          border-radius: 8px;
-        }
-      }
-      p {
-        margin-top: 0.2em;
-        font-size: 0.8em;
-        color: $text;
-      }
-    }
-  }
-}
 // PROFIL
 #profil {
   padding-bottom: 3em;

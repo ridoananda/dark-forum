@@ -13,3 +13,31 @@
 	  </form>
 	</nav>
 </template>
+<style lang="scss" scoped>
+@import '~/assets/scss/bootstrap.scss';
+// NAVBAR COMMENT
+nav.navbar-comment {
+  background-color: $navbar;
+  border-top-right-radius: 18px;
+  border-top-left-radius: 18px;
+  padding: 0.7em 0em;
+  input {
+    &:focus {
+      border-radius: 30px;
+      background-color: $soft;
+      color: $text;
+    }
+    padding: 0.4em 0.9em;
+    color: $text;
+    height: 2.8em;
+    border-radius: 30px !important;
+    background-color: $soft;
+    border: none;
+  }
+  button.btn {
+    padding: 0;
+    box-shadow: none;
+  }
+  @include position-responsive();
+}
+</style>
