@@ -1,7 +1,7 @@
 <template>
 	<div id="notification">
     <div class="container">
-	    <div id="detail-post" class="row justify-content-center">
+	    <div class="row justify-content-center">
   	    <div class="col-sm-10 col-lg-8 px-0 px-md-2">
 					<div class="header">
 						<div class="d-flex justify-content-between align-items-center">
@@ -9,8 +9,10 @@
 							<iconify icon="sword-line" />
 						</div>
 					</div>
+					<div class=" d-flex justify-content-center">
+						
 					<div class="wrapper">
-						<div class="d-flex align-items-center justify-content-start notif">
+						<div class="notif d-flex align-items-center">
 							<img src="~/assets/img/pajak_bertutur.jpg" width="50" height="50" class="rounded-circle mr-2">
 							<div class="text-notif">
 								<p class="mb-2">
@@ -117,6 +119,7 @@
 							</div>
 						</div>
 					</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -142,14 +145,14 @@
 			.notif {
 				padding: 0em .8em 0 .8em;
 				.text-notif {
-					font-size: .8em;
+					font-size: .85em;
 					line-height: 1.3em;
 				}
 				.action {
-					font-size: .8em;
+					font-size: .85em;
 					button {
-						padding: .2em .6em;
-						padding-bottom: .3em;
+						padding: .3em .6em;
+						// padding-bottom: .3em;
 						font-size: .9em;
 					}
 				}

@@ -11,7 +11,9 @@ body {
   }
 }
 @include card-post();
-
+#modal-center .modal-footer {
+    border: none !important;
+  }
 // PROFIL
 #profil {
   padding-bottom: 3em;

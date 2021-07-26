@@ -71,7 +71,7 @@ export default {
         width: 14px;
         height: 14px;
         margin: auto;
-        padding: .05em .5em;
+        padding: .2em .55em;
       }
     }
     .swipe {

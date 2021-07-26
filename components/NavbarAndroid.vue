@@ -16,9 +16,35 @@
         <a class="nav-link" href="#">
           <small></small>
         </a>
-        <nuxt-link class="nav-link add-post" to="/add">
+        <a v-b-modal.modal-center href="#" class="nav-link add-post" @click.prevent>
           <Iconify icon="plus" />
-        </nuxt-link>
+        </a>
+        <b-modal id="modal-center" centered body-bg-variant="soft" footer-bg-variant="soft" footer-text-variant="white" button-size="sm" hide-header>
+          <b-row>
+            <b-col>
+              <b-button block variant="background" class="my-3" size="sm">
+                <nuxt-link to="/add-post" class="text-white">
+                  Add Post
+                </nuxt-link>
+              </b-button>
+            </b-col>
+          </b-row>
+          <b-row>
+            <b-col>
+              <b-button block variant="background" size="sm">
+                <nuxt-link to="/add-question" class="text-white">
+                  Add Question
+                </nuxt-link>
+              </b-button>
+            </b-col>
+          </b-row>
+          <template #modal-footer="{cancel}">
+            <b-button size="sm" variant="background" @click="cancel()">
+              Cancel
+            </b-button>
+          </template>
+        </b-modal>
+
         <nuxt-link class="nav-link" to="/war">
           <Iconify icon="sword-line" />
           <small>War</small>
@@ -80,5 +106,6 @@ nav.navbar-bawah {
       font-size: 0.7em;
     }
   }
+
 }
 </style>
