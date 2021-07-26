@@ -18,9 +18,43 @@
               <a href="#" class="btn"> Bookmark </a>
             </div>
           </div>
-          <CardPost></CardPost>
-          <CardPost></CardPost>
-          <CardPost></CardPost>
+
+          <b-skeleton-wrapper :loading="loading">
+            <template #loading>
+              <b-card id="card-loader">
+                <b-skeleton width="85%"></b-skeleton>
+                <b-skeleton width="60%"></b-skeleton>
+                <b-skeleton width="70%"></b-skeleton>
+                <b-skeleton width="80%"></b-skeleton>
+              </b-card>
+              <b-card id="card-loader">
+                <b-skeleton width="85%"></b-skeleton>
+                <b-skeleton width="60%"></b-skeleton>
+                <b-skeleton width="70%"></b-skeleton>
+                <b-skeleton width="80%"></b-skeleton>
+              </b-card>
+              <b-card id="card-loader">
+                <b-skeleton width="85%"></b-skeleton>
+                <b-skeleton width="60%"></b-skeleton>
+                <b-skeleton width="70%"></b-skeleton>
+                <b-skeleton width="80%"></b-skeleton>
+              </b-card>
+              <b-card id="card-loader">
+                <b-skeleton width="85%"></b-skeleton>
+                <b-skeleton width="60%"></b-skeleton>
+                <b-skeleton width="70%"></b-skeleton>
+                <b-skeleton width="80%"></b-skeleton>
+              </b-card>
+            </template>
+
+            <div v-if="post == true">
+              <CardPost></CardPost>
+              <CardPost></CardPost>
+              <CardPost></CardPost>
+            </div>
+          </b-skeleton-wrapper>
+          
+
         </div>
       </div>
     </div>
@@ -31,13 +65,53 @@
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      title: ''
+  export default {
+    data() {
+      return {
+        loading: false,
+        loadingTime: 0,
+        maxLoadingTime: 1,
+        post: false
+      }
+    },
+    watch: {
+      loading(newValue, oldValue) {
+        if (newValue !== oldValue) {
+          this.clearLoadingTimeInterval()
+
+          if (newValue) {
+            this.$_loadingTimeInterval = setInterval(() => {
+              this.loadingTime++
+            }, 1000)
+          }
+        }
+      },
+      loadingTime(newValue, oldValue) {
+        if (newValue !== oldValue) {
+          if (newValue === this.maxLoadingTime) {
+            this.loading = false
+            this.post = true
+          }
+        }
+      }
+    },
+    created() {
+      this.$_loadingTimeInterval = null
+    },
+    mounted() {
+      this.startLoading()
+    },
+    methods: {
+      clearLoadingTimeInterval() {
+        clearInterval(this.$_loadingTimeInterval)
+        this.$_loadingTimeInterval = null
+      },
+      startLoading() {
+        this.loading = true
+        this.loadingTime = 0
+      }
     }
   }
-}
 </script>
 
 <style lang="scss" scoped>
@@ -114,6 +188,14 @@ export default {
         border: 2px solid $bginput;
       }
     }
+  }
+}
+#card-loader {
+  background-color: $soft;
+  margin: .9em .6em;
+  margin-top: 0;
+  .b-skeleton {
+    margin: .6em 0;
   }
 }
 </style>

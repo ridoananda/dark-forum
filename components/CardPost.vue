@@ -46,3 +46,8 @@
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+@import '~/assets/scss/bootstrap.scss';
+@include card-post();
+</style>

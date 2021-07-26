@@ -12,11 +12,6 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap' },
     ],
-    // script: [
-    //   {
-    //     src: 'https://code.iconify.design/1/1.0.7/iconify.min.js'
-    //   }
-    // ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -53,7 +48,9 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'https://api-dark-forum.ardyans.com/api/'
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {

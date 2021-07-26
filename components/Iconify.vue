@@ -10,6 +10,7 @@ import plus from '@iconify/icons-bi/plus'
 import swordLine from '@iconify/icons-ri/sword-line'
 import notification from '@iconify/icons-ci/notification'
 import chatBubblesQuestion16Regular from '@iconify/icons-fluent/chat-bubbles-question-16-regular'
+import peopleAudience24Filled from '@iconify/icons-fluent/people-audience-24-filled'
 import userCircleDuotone from '@iconify/icons-ph/user-circle-duotone'
 
 addIcon('home', homeOutline);
@@ -18,6 +19,7 @@ addIcon('sword-line', swordLine);
 addIcon('chat-bubbles-question-16-regular', chatBubblesQuestion16Regular)
 addIcon('ci-notification', notification);
 addIcon('user-circle-duotone', userCircleDuotone);
+addIcon('people-audience-24-filled', peopleAudience24Filled);
 
 export default {
 	components: {
