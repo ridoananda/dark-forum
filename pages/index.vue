@@ -21,36 +21,22 @@
 
           <b-skeleton-wrapper :loading="loading">
             <template #loading>
-              <b-card id="card-loader">
+              <b-card id="card-loader" v-for="n in 6" :key="n">
                 <b-skeleton width="85%"></b-skeleton>
                 <b-skeleton width="60%"></b-skeleton>
                 <b-skeleton width="70%"></b-skeleton>
-                <b-skeleton width="80%"></b-skeleton>
-              </b-card>
-              <b-card id="card-loader">
-                <b-skeleton width="85%"></b-skeleton>
-                <b-skeleton width="60%"></b-skeleton>
-                <b-skeleton width="70%"></b-skeleton>
-                <b-skeleton width="80%"></b-skeleton>
-              </b-card>
-              <b-card id="card-loader">
-                <b-skeleton width="85%"></b-skeleton>
-                <b-skeleton width="60%"></b-skeleton>
-                <b-skeleton width="70%"></b-skeleton>
-                <b-skeleton width="80%"></b-skeleton>
-              </b-card>
-              <b-card id="card-loader">
-                <b-skeleton width="85%"></b-skeleton>
-                <b-skeleton width="60%"></b-skeleton>
-                <b-skeleton width="70%"></b-skeleton>
-                <b-skeleton width="80%"></b-skeleton>
+                <b-skeleton-img no-aspect height="150px" class="mt-2"></b-skeleton-img>
               </b-card>
             </template>
 
-            <div v-if="post == true">
-              <CardPost></CardPost>
-              <CardPost></CardPost>
-              <CardPost></CardPost>
+            <div v-if="loadPost == true">
+              <div v-for="post in posts" :key="post.id">                
+                <CardPost 
+                  :title="post.title"
+                  :created_at="post.created_at.month"
+                  :user_name="post.user.name"
+                  ></CardPost>
+              </div>
             </div>
           </b-skeleton-wrapper>
           
@@ -71,7 +57,8 @@
         loading: false,
         loadingTime: 0,
         maxLoadingTime: 1,
-        post: false
+        loadPost: false,
+        posts: []
       }
     },
     watch: {
@@ -90,7 +77,7 @@
         if (newValue !== oldValue) {
           if (newValue === this.maxLoadingTime) {
             this.loading = false
-            this.post = true
+            this.loadPost = true
           }
         }
       }
@@ -99,7 +86,8 @@
       this.$_loadingTimeInterval = null
     },
     mounted() {
-      this.startLoading()
+      this.startLoading();
+      this.getPost();
     },
     methods: {
       clearLoadingTimeInterval() {
@@ -109,6 +97,10 @@
       startLoading() {
         this.loading = true
         this.loadingTime = 0
+      },
+      async getPost() {
+        const response = await this.$axios.get('post');
+        this.posts = response.data.data
       }
     }
   }
@@ -118,7 +110,7 @@
 @import '~/assets/scss/bootstrap.scss';
 // HOME
 #home {
-  padding-top: 9.8em;
+  padding-top: 9.6em;
   padding-bottom: 4.5em;
   .navbar-atas {
     @include position-responsive();
@@ -138,7 +130,7 @@
         position: absolute;
         font-size: .5em;
         top: 0;
-        left: 1.2em;
+        left: 1.5em;
         right: 0;
         border-radius: 50%;
         background: red;
@@ -146,6 +138,7 @@
         height: 14px;
         margin: auto;
         padding: .2em .55em;
+        font-weight: bold;
       }
     }
     .swipe {
@@ -193,9 +186,11 @@
 #card-loader {
   background-color: $soft;
   margin: .9em .6em;
+    border-radius: 12px;
   margin-top: 0;
   .b-skeleton {
     margin: .6em 0;
+    border-radius: 12px;
   }
 }
 </style>

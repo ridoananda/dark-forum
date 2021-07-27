@@ -12,10 +12,10 @@
         </nuxt-link>
         <div class="uploader">
           <nuxt-link to="/post" class="text-decoration-none text">
-            <p>Bypass 403 Forbidden!</p>
+            <p>{{ title }}</p>
           </nuxt-link>
           <nuxt-link to="/profil" class="text-decoration-none">
-            <small>Ardyan Vicky Ramadhan</small>
+            <small>{{ user_name }}</small>
           </nuxt-link>
           <div class="info-post">
             <a href="/post" class="text-decoration-none text">
@@ -24,14 +24,14 @@
           </div>
         </div>
       </div>
-      <div class="add">
+      <div class="add text-center">
         <span>
           <b-icon icon="bookmark"></b-icon>
         </span>
         <b-icon icon="heart"></b-icon>
         <div>
           <nuxt-link to="/post" class="text-decoration-none text">
-            1 Juli 2021
+            {{ created_at }}
           </nuxt-link>
         </div>
       </div>
@@ -51,3 +51,9 @@
 @import '~/assets/scss/bootstrap.scss';
 @include card-post();
 </style>
+
+<script>
+export default{
+  props: ['title', 'created_at', 'user_name']
+}
+</script>
