@@ -11,8 +11,18 @@ body {
   }
 }
 #modal-center .modal-footer {
-    border: none !important;
+  border: none !important;
+}
+#card-loader {
+  background-color: $soft;
+  margin: .9em .6em;
+  border-radius: 12px;
+  margin-top: 0;
+  .b-skeleton {
+    margin: .6em 0;
+    border-radius: 12px;
   }
+} 
 // PROFIL
 #profil {
   padding-bottom: 3em;

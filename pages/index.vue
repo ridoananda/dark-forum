@@ -18,7 +18,6 @@
               <a href="#" class="btn"> Bookmark </a>
             </div>
           </div>
-
           <b-skeleton-wrapper :loading="loading">
             <template #loading>
               <b-card id="card-loader" v-for="n in 6" :key="n">
@@ -29,18 +28,17 @@
               </b-card>
             </template>
 
-            <div v-if="loadPost == true">
+            <!-- <div v-if="loadPost == true"> -->
               <div v-for="post in posts" :key="post.id">                
                 <CardPost 
                   :title="post.title"
-                  :created_at="post.created_at.month"
-                  :user_name="post.user.name"
+                  :createdAt="post.created_at.month"
+                  :userName="post.user.name"
+                  :slug="post.slug"
                   ></CardPost>
               </div>
-            </div>
+            <!-- </div> -->
           </b-skeleton-wrapper>
-          
-
         </div>
       </div>
     </div>
@@ -56,8 +54,6 @@
       return {
         loading: false,
         loadingTime: 0,
-        maxLoadingTime: 1,
-        loadPost: false,
         posts: []
       }
     },
@@ -73,14 +69,6 @@
           }
         }
       },
-      loadingTime(newValue, oldValue) {
-        if (newValue !== oldValue) {
-          if (newValue === this.maxLoadingTime) {
-            this.loading = false
-            this.loadPost = true
-          }
-        }
-      }
     },
     created() {
       this.$_loadingTimeInterval = null
@@ -101,6 +89,10 @@
       async getPost() {
         const response = await this.$axios.get('post');
         this.posts = response.data.data
+        console.log(response)
+        if (response.status === 200) {
+          this.loading = false
+        }
       }
     }
   }
@@ -183,15 +175,6 @@
     }
   }
 }
-#card-loader {
-  background-color: $soft;
-  margin: .9em .6em;
-    border-radius: 12px;
-  margin-top: 0;
-  .b-skeleton {
-    margin: .6em 0;
-    border-radius: 12px;
-  }
-}
+
 </style>
 

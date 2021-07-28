@@ -49,7 +49,10 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'https://api-dark-forum.ardyans.com/api/'
+    baseURL: 'https://api-dark-forum.ardyans.com/api/',
+    headers: {
+      'Accept' : 'application/json'
+    }
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

@@ -11,14 +11,14 @@
           />
         </nuxt-link>
         <div class="uploader">
-          <nuxt-link to="/post" class="text-decoration-none text">
-            <p>{{ title }}</p>
+          <nuxt-link :to="`/post/${slug}`" class="text-decoration-none text">
+            <marquee>{{ title }}</marquee>
           </nuxt-link>
           <nuxt-link to="/profil" class="text-decoration-none">
-            <small>{{ user_name }}</small>
+            <small>{{ userName }}</small>
           </nuxt-link>
           <div class="info-post">
-            <a href="/post" class="text-decoration-none text">
+            <a href="`/post/${slug}`" class="text-decoration-none text">
               <b-icon icon="chat-square-text"></b-icon> 2 comments
             </a>
           </div>
@@ -30,13 +30,13 @@
         </span>
         <b-icon icon="heart"></b-icon>
         <div>
-          <nuxt-link to="/post" class="text-decoration-none text">
-            {{ created_at }}
+          <nuxt-link :to="`/post/${slug}`" class="text-decoration-none text">
+            {{ createdAt }}
           </nuxt-link>
         </div>
       </div>
     </div>
-    <nuxt-link to="/post">
+    <nuxt-link :to="`/post/${slug}`">
       <img src="~/assets/img/pajak_bertutur.jpg" class="thumbnail img-fluid" />
     </nuxt-link>
     <div class="btn-tags mt-2">
@@ -46,14 +46,13 @@
     </div>
   </div>
 </template>
-
+<script>
+export default{
+  props: ['title', 'createdAt', 'userName', 'slug']
+}
+</script>
 <style lang="scss" scoped>
 @import '~/assets/scss/bootstrap.scss';
 @include card-post();
 </style>
 
-<script>
-export default{
-  props: ['title', 'created_at', 'user_name']
-}
-</script>

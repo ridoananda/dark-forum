@@ -9,117 +9,88 @@
 							<iconify icon="sword-line" />
 						</div>
 					</div>
-					<div class=" d-flex justify-content-center">
-						
-					<div class="wrapper">
-						<div class="notif d-flex align-items-center">
-							<img src="~/assets/img/pajak_bertutur.jpg" width="50" height="50" class="rounded-circle mr-2">
-							<div class="text-notif">
-								<p class="mb-2">
-									Seseorang bernama <span class="text-icon">Rido Ananda</span> menantang anda! wwkwk canda bang:V
-								</p>
-								<div class="action d-flex justify-content-between align-items-end">
-									<small class="text-muted d-flex align-items-center">
-										<b-icon icon="clock" class="mr-1"></b-icon>22 minute ago
-									</small>
-									<div>
-										<b-button variant="danger" size="sm" class="mr-1">
-											<b-icon icon="x"></b-icon> Tolak
-										</b-button>
-										<b-button variant="success" size="sm">
-											<b-icon icon="check"></b-icon> Terima
-										</b-button>
+					<b-skeleton-wrapper :loading="loading">
+            <template #loading>
+              <b-card id="card-loader" class="mt-3" v-for="n in 6" :key="n">
+                <b-skeleton width="85%"></b-skeleton>
+                <b-skeleton width="60%"></b-skeleton>
+              </b-card>
+            </template>
+						<div class="d-flex justify-content-center">
+							<div class="wrapper">
+								<div v-if="notif.length">
+									<div class="notif d-flex align-items-center" v-for="notif in notif" :key="notif">
+										<img src="~/assets/img/pajak_bertutur.jpg" width="50" height="50" class="rounded-circle mr-2">
+										<div class="text-notif">
+											<p class="mb-2">
+												{{ notif.text }}
+											</p>
+											<div class="action d-flex justify-content-between align-items-end">
+												<small class="text-muted d-flex align-items-center">
+													<b-icon icon="clock" class="mr-1"></b-icon>{{ notif.time }}
+												</small>
+												<div>
+													<b-button variant="danger" size="sm" class="mr-1">
+														<b-icon icon="x"></b-icon> Tolak
+													</b-button>
+													<b-button variant="success" size="sm">
+														<b-icon icon="check"></b-icon> Terima
+													</b-button>
+												</div>
+											</div>
+										</div>
 									</div>
+									<hr>
 								</div>
-							</div>
-						</div>
-						<hr>
-						<div class="d-flex align-items-center justify-content-start notif">
-							<img src="~/assets/img/pajak_bertutur.jpg" width="50" height="50" class="rounded-circle mr-2">
-							<div class="text-notif">
-								<p class="mb-2">
-									Seseorang bernama <span class="text-icon">Rido Ananda</span> menantang anda! wwkwk canda bang:V
-								</p>
-								<div class="action d-flex justify-content-between align-items-end">
-									<small class="text-muted d-flex align-items-center">
-										<b-icon icon="clock" class="mr-1"></b-icon>18 minute ago
-									</small>
-									<div>
-										<b-button variant="danger" size="sm" class="mr-1">
-											<b-icon icon="x"></b-icon> Tolak
-										</b-button>
-										<b-button variant="success" size="sm">
-											<b-icon icon="check"></b-icon> Terima
-										</b-button>
+								<div v-else>
+									<div class="notif d-flex align-items-center">
+										<img src="~/assets/img/pajak_bertutur.jpg" width="50" height="50" class="rounded-circle mr-2">
+										<div class="text-notif">
+											<p class="mb-2">
+												Seseorang bernama <span class="text-icon">Rido Ananda</span> menantang anda! wwkwk canda bang:V
+											</p>
+											<div class="action d-flex justify-content-between align-items-end">
+												<small class="text-muted d-flex align-items-center">
+													<b-icon icon="clock" class="mr-1"></b-icon>10 minutes ago
+												</small>
+												<div>
+													<b-button variant="danger" size="sm" class="mr-1">
+														<b-icon icon="x"></b-icon> Tolak
+													</b-button>
+													<b-button variant="success" size="sm">
+														<b-icon icon="check"></b-icon> Terima
+													</b-button>
+												</div>
+											</div>
+										</div>
 									</div>
-								</div>
-							</div>
-						</div>
-						<hr>
-						<div class="d-flex align-items-center justify-content-start notif">
-							<img src="~/assets/img/pajak_bertutur.jpg" width="50" height="50" class="rounded-circle mr-2">
-							<div class="text-notif">
-								<p class="mb-2">
-									Seseorang bernama <span class="text-icon">Rido Ananda</span> menantang anda! wwkwk canda bang:V
-								</p>
-								<div class="action d-flex justify-content-between align-items-end">
-									<small class="text-muted d-flex align-items-center">
-										<b-icon icon="clock" class="mr-1"></b-icon>4 minute ago
-									</small>
-									<div>
-										<b-button variant="danger" size="sm" class="mr-1">
-											<b-icon icon="x"></b-icon> Tolak
-										</b-button>
-										<b-button variant="success" size="sm">
-											<b-icon icon="check"></b-icon> Terima
-										</b-button>
+									<hr>
+									<div class="notif d-flex align-items-center">
+										<img src="~/assets/img/pajak_bertutur.jpg" width="50" height="50" class="rounded-circle mr-2">
+										<div class="text-notif">
+											<p class="mb-2">
+												Seseorang bernama <span class="text-icon">Rido Ananda</span> menantang anda! wwkwk canda bang:V
+											</p>
+											<div class="action d-flex justify-content-between align-items-end">
+												<small class="text-muted d-flex align-items-center">
+													<b-icon icon="clock" class="mr-1"></b-icon>10 minutes ago
+												</small>
+												<div>
+													<b-button variant="danger" size="sm" class="mr-1">
+														<b-icon icon="x"></b-icon> Tolak
+													</b-button>
+													<b-button variant="success" size="sm">
+														<b-icon icon="check"></b-icon> Terima
+													</b-button>
+												</div>
+											</div>
+										</div>
 									</div>
+									<hr>
 								</div>
 							</div>
 						</div>
-						<hr>
-						<div class="d-flex align-items-center justify-content-start notif">
-							<img src="~/assets/img/pajak_bertutur.jpg" width="50" height="50" class="rounded-circle mr-2">
-							<div class="text-notif">
-								<p class="mb-2">
-									Seseorang bernama <span class="text-icon">Rido Ananda</span> menantang anda! wwkwk canda bang:V
-								</p>
-								<div class="action d-flex justify-content-between align-items-end">
-									<small class="text-muted d-flex align-items-center">
-										<b-icon icon="clock" class="mr-1"></b-icon>22 minute ago
-									</small>
-									<div>
-										<b-button variant="danger" size="sm" class="mr-1">
-											<b-icon icon="x"></b-icon> Tolak
-										</b-button>
-										<b-button variant="success" size="sm">
-											<b-icon icon="check"></b-icon> Terima
-										</b-button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<hr>
-						<div class="d-flex align-items-center justify-content-start notif">
-							<img src="~/assets/img/pajak_bertutur.jpg" width="50" height="50" class="rounded-circle mr-2">
-							<div class="text-notif">
-								<p class="mb-2">
-									<span class="text-icon">Cipto Ardian</span> Mengomentari postingan anda.
-								</p>
-								<div class="action d-flex justify-content-between align-items-end">
-									<small class="text-muted d-flex align-items-center">
-										<b-icon icon="clock" class="mr-1"></b-icon>1 hours ago
-									</small>
-									<!-- <div>
-										<b-button variant="info" size="sm">
-											Lihat <b-icon icon="arrow-right"></b-icon>
-										</b-button>
-									</div> -->
-								</div>
-							</div>
-						</div>
-					</div>
-					</div>
+					</b-skeleton-wrapper>
 				</div>
 			</div>
 		</div>
@@ -127,6 +98,59 @@
 	</div>
 </template>
 
+<script>
+export default {
+	data() {
+		return {
+			loading: false,
+			loadingTime: 0,
+			notif: [],
+			maxLoadingTime: 3
+		}
+	},
+	watch: {
+    loading(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        this.clearLoadingTimeInterval()
+
+        if (newValue) {
+          this.$_loadingTimeInterval = setInterval(() => {
+            this.loadingTime++
+          }, 1000)
+        }
+      }
+    },
+    loadingTime(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        if (newValue === this.maxLoadingTime) {
+          this.loading = false
+        }
+      }
+    }
+  },
+  created() {
+    this.$_loadingTimeInterval = null
+  },
+  mounted() {
+    this.startLoading();
+  },
+	methods: {
+		clearLoadingTimeInterval() {
+      clearInterval(this.$_loadingTimeInterval)
+      this.$_loadingTimeInterval = null
+    },
+    startLoading() {
+      this.loading = true
+      this.loadingTime = 0
+    },
+    async getNotif() {
+    	const res = await this.$axios.get(`notification/1`)
+    	this.notif = res.data.data
+    	this.loading = false
+    }
+	}
+}
+</script>
 <style lang="scss" scoped>
 @import '~/assets/scss/bootstrap.scss';
 	#notification {

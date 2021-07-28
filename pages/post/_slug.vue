@@ -16,8 +16,8 @@
                 height="50"
               />
               <div class="date">
-                25 Juni
-                <div>2020</div>
+                {{ post.created_at.month }}
+                <div>2021</div>
               </div>
             </div>
             <img
@@ -28,7 +28,7 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div>
                   <div class="d-flex align-items-center">
-                    <h5 class="post-title mt-2 font-weight-bold">Bypass 404 Forbidden! You don't have permisson to into her heart!</h5>
+                    <h5 class="post-title mt-2 font-weight-bold">{{ post.title }}</h5>
                   </div>
                 </div>
                 <div class="love-comment-bookmark w-100 text-right">
@@ -54,19 +54,7 @@
                 </div>
               </div>
               <p class="text mb-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-                ab, tempora veritatis quo assumenda accusamus doloribus illum,
-                quidem magni exercitationem pariatur sapiente voluptas impedit
-                commodi rerum fuga itaque nihil quia. Sint, quam amet debitis
-                voluptatum et quidem quaerat in totam culpa dolorem a ratione
-                obcaecati officiis excepturi veniam, quisquam sed doloremque ipsa.
-                Modi sed, aliquid possimus officiis aut voluptatem illo, itaque,
-                ex doloremque nulla doloribus labore provident iusto qui autem
-                minima rerum expedita id cupiditate. Veniam soluta molestias nulla
-                est placeat, optio reiciendis quo assumenda rerum doloremque ab.
-                Corrupti ducimus, soluta placeat quas optio eos consequatur
-                distinctio et eligendi tempore!
-              </p>
+                {{ post.text }}
               
               <hr class="mt-2" />
               <h5 class="my-3 header-comment">
@@ -83,7 +71,7 @@
                   />
                   <div class="wrap-comment ml-2">
                     <a href="profil.html" class="username text-decoration-none"
-                      >Rido Ananda</a
+                      >{{ post.title }}</a
                     >
                     <p class="mb-1">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -148,7 +136,15 @@
     <NavbarComment></NavbarComment>
   </div>
 </template>
-<script></script>
+<script>
+export default {
+  async asyncData({params, $axios}) {
+    const post = await $axios.get(`post/${params.slug}`);
+    console.log(post)
+    return { post: post.data.data }
+  }
+}
+</script>
 <style lang="scss" scoped>
 @import '~/assets/scss/bootstrap.scss';
 
