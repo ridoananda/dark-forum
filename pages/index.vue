@@ -120,16 +120,16 @@
       }
       .count-notif {
         position: absolute;
-        font-size: .5em;
+        font-size: .6em;
         top: 0;
-        left: 1.5em;
+        left: 1.3em;
         right: 0;
         border-radius: 50%;
         background: red;
         width: 14px;
         height: 14px;
         margin: auto;
-        padding: .2em .55em;
+        padding: .08em .48em;
         font-weight: bold;
       }
     }

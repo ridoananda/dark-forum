@@ -14,7 +14,7 @@
     a {
       background-color: $background;
       color: $text;
-      padding: 0.3em 1em;
+      padding: 0.3em .8em;
       border-radius: 8px;
       font-size: 0.7em;
       margin-right: $mr;
@@ -22,7 +22,7 @@
     }
   }
 }
-@mixin card-post($p-top-bottom: 0.7em, $p-left-right: 0.8em) {
+@mixin card-post($p-top-bottom: 0.8em, $p-left-right: 0.8em) {
   .card-post {
     background-color: $soft;
     border-radius: 10px;
@@ -30,28 +30,29 @@
     margin-bottom: 0.7em;
     .info {
       .uploader {
-        margin-left: 0.5em;
         a > p {
           font-size: 0.9em;
           word-break: break-all;
-          margin-bottom: -0.3em;
+          margin-bottom: .2em;
+          line-height: 1.3em;
           font-weight: 600;
         }
-        small {
-          font-size: 0.8em;
-          color: #45b250;
-        }
         .info-post {
-          margin-top: 0.2em;
           a {
+            &.date {
+              margin-bottom: .2em;
+              display: block;
+            }
             font-weight: 400;
-            font-size: 0.7em;
+            color: $text;
+            opacity: .9;
+            font-size: .8em;
           }
         }
       }
     }
+    
     .add {
-      width: 5em;
       .b-icon {
         &.bi-bookmark {
           color: #4b6dc0;
@@ -59,8 +60,7 @@
         &.bi-heart {
           color: red;
         }
-        margin: 0 0.1em;
-        font-size: 1.2em;
+        font-size: 1.3em;
       }
       div > a {
         display: block;
@@ -82,8 +82,8 @@
       }
     }
     .thumbnail {
-      border-radius: 12px;
-      margin-top: 1em;
+      border-radius: 10px;
+      margin-top: .7em;
     }
     @include btn-tags();
   }

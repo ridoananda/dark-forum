@@ -1,49 +1,50 @@
 <template>
   <div class="card-post mx-2 mx-sm-0">
-    <div class="d-flex justify-content-between">
-      <div class="info d-flex align-items-center">
+    <!-- <div class="d-flex justify-content-between"> -->
+      <div class="info">
         <nuxt-link to="/profil" class="text-decoration-none">
           <img
             src="~/assets/img/logo.png"
-            width="60"
-            height="60"
-            class="logo rounded-circle"
+            width="55"
+            height="55"
+            class="logo rounded-circle float-left mr-2"
           />
         </nuxt-link>
         <div class="uploader">
           <nuxt-link :to="`/post/${slug}`" class="text-decoration-none text">
-            <marquee>{{ title }}</marquee>
+            <p>{{ title }}</p>
           </nuxt-link>
-          <nuxt-link to="/profil" class="text-decoration-none">
-            <small>{{ userName }}</small>
-          </nuxt-link>
-          <div class="info-post">
-            <a href="`/post/${slug}`" class="text-decoration-none text">
-              <b-icon icon="chat-square-text"></b-icon> 2 comments
-            </a>
+          <div class="info-post d-flex justify-content-between align-items-center">
+            <small class="d-block">
+              <nuxt-link :to="`/post/${slug}`" class="text-decoration-none date">
+                <b-icon icon="calendar4" class="mr-1"></b-icon>{{ createdAt }}
+              </nuxt-link>
+              <nuxt-link :to="`/post/${slug}`" class="text-decoration-none text d-block">
+                <b-icon icon="chat-square-text" class="mr-1"></b-icon>2 comment
+              </nuxt-link>
+            </small>
+            <div class="add text-center">
+              <b-icon icon="heart" class="mr-2"></b-icon>
+              <span>
+                <b-icon icon="bookmark"></b-icon>
+              </span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="add text-center">
-        <span>
-          <b-icon icon="bookmark"></b-icon>
-        </span>
-        <b-icon icon="heart"></b-icon>
-        <div>
-          <nuxt-link :to="`/post/${slug}`" class="text-decoration-none text">
-            {{ createdAt }}
-          </nuxt-link>
-        </div>
-      </div>
-    </div>
+      
+    <!-- </div> -->
     <nuxt-link :to="`/post/${slug}`">
       <img src="~/assets/img/pajak_bertutur.jpg" class="thumbnail img-fluid" />
     </nuxt-link>
     <div class="btn-tags mt-2">
-      <a href="#" class="btn"> #bypass </a>
-      <a href="#" class="btn"> #forbidden </a>
-      <a href="#" class="btn"> #403 </a>
+      <a href="#" class="btn"> bug hunter </a>
+      <a href="#" class="btn"> programming </a>
+      <a href="#" class="btn"> hacking </a>
     </div>
+    
+    
+    
   </div>
 </template>
 <script>
