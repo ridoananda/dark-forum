@@ -45,7 +45,8 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     'bootstrap-vue/nuxt',
-    '@nuxtjs/auth-next'
+    '@nuxtjs/auth-next',
+    '@nuxtjs/toast',
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -57,27 +58,18 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'http://localhost:8000/',
+    baseURL: 'https://api-dark-forum.ardyans.com/',
     headers: {
       'Accept' : 'application/json'
     },
-    // proxy: true,
     withCredentials: true
   },
-  // proxy: {
-  //   '/laravel': {
-  //     target: 'https://api-dark-forum.ardyans.com',
-  //     pathRewrite: {
-  //       '^/laravel' : '/'
-  //     }
-  //   }
-  // },
 
   auth: {
     strategies: {
       'laravelSanctum' : {
         provider: 'laravel/sanctum',
-        url: 'http://localhost:8000',
+        url: 'https://api-dark-forum.ardyans.com',
         endpoints: {
           login: { url: '/login', method: 'post' },
           logout: { url: '/logout', method: 'post' },
@@ -89,7 +81,8 @@ export default {
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},
-
+  ssr: true,
+  target: 'static',
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     extractCSS: true
