@@ -139,7 +139,7 @@
 <script>
 export default {
   async asyncData({params, $axios}) {
-    const post = await $axios.get(`post/${params.slug}`);
+    const post = await $axios.get(`api/post/${params.slug}`);
     console.log(post)
     return { post: post.data.data }
   }

@@ -14,6 +14,7 @@
             />
           </div>
           <div class="wrapper">
+            <a href="#" class="btn btn-edit" @click.prevent="logout">Logout</a>
             <nuxt-link to="/edit-profil" class="btn btn-edit">Edit profil</nuxt-link>
             <h5 class="your-post">Your post</h5>
             <div class="card-post">
@@ -208,7 +209,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    async logout () {
+      await this.$auth.logout()
+      this.$router.push('/login')
+    }
+  }
+}
 </script>
 
 <style></style>

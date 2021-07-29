@@ -8,23 +8,25 @@
           <div class="d-flex justify-content-center">
             <img src="~/assets/img/logo.png" alt="Logo" class="logo" />
           </div>
-          <form method="post" action="" class="form">
+          <form method="post" class="form" @submit.prevent="login">
             <h4 class="text-center fw-bold">Login</h4>
             <div class="input">
               <input
                 type="text"
                 class="form-control mb-4"
-                placeholder="Username"
+                placeholder="Email"
+                v-model="email"
               />
               <input
                 type="text"
                 class="form-control mb-1"
                 placeholder="Password"
+                v-model="password"
               />
               <nuxt-link to="forgot-password">Forgot password ?</nuxt-link>
             </div>
             <div class="d-flex justify-content-center mt-3">
-              <button type="button" class="btn btn-login">Login</button>
+              <button type="submit" class="btn btn-login">Login</button>
             </div>
           </form>
           <div class="d-flex justify-content-center mt-3 register">
@@ -38,3 +40,30 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      email: '',
+      password: '',
+    }
+  },
+  methods: {
+    async login() {
+      try {
+        await this.$axios.get('sanctum/csrf-cookie');
+        await this.$auth.loginWith('laravelSanctum', {
+          data: {
+            email: this.email,
+            password: this.password
+          }
+        });
+        this.$router.push('/')
+          
+      } catch (e) {
+        console.log(e)
+      }
+    }
+  }
+}
+</script>

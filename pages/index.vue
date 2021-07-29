@@ -87,7 +87,7 @@
         this.loadingTime = 0
       },
       async getPost() {
-        const response = await this.$axios.get('post');
+        const response = await this.$axios.get('api/post');
         this.posts = response.data.data
         console.log(response)
         if (response.status === 200) {
