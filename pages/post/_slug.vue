@@ -20,15 +20,25 @@
                 <div>2021</div>
               </div>
             </div>
-            <img
-              src="~/assets/img/pajak_bertutur.jpg"
-              class="img-fluid thumbnail-post"
-            />
+            <div v-if="post.thumbnail">
+              <img
+                :src="post.thumbnail"
+                alt=""
+                class="thumbnail-post img-fluid"
+              />
+            </div>
+            <div v-else>
+              <img
+                src="~/assets/img/logo.png"
+                alt=""
+                class="thumbnail-post img-fluid"
+              />
+            </div>
             <div class="info-detail px-3 px-md-3">
               <div class="d-flex justify-content-between align-items-center">
                 <div>
                   <div class="d-flex align-items-center">
-                    <h5 class="post-title mt-2 font-weight-bold">{{ post.title }}</h5>
+                    <h5 class="post-title mt-2 font-weight-bold">{{ post.title.full }}</h5>
                   </div>
                 </div>
                 <div class="love-comment-bookmark w-100 text-right">
@@ -71,7 +81,7 @@
                   />
                   <div class="wrap-comment ml-2">
                     <a href="profil.html" class="username text-decoration-none"
-                      >{{ post.title }}</a
+                      >{{ post.title.full }}</a
                     >
                     <p class="mb-1">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -150,7 +160,7 @@ export default {
 
 #detail-post {
   #column {
-    background: white;
+    // background: white;
   }
   padding-bottom: 3em;
   .back {
@@ -158,6 +168,7 @@ export default {
     font-size: 1.7em;
     cursor: pointer;
     margin-left: 0.4em;
+    z-index: 1;
     margin-top: 0.4em;
   }
   .info-uploader {
@@ -184,7 +195,7 @@ export default {
     box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.58);
   }
   .info-detail {
-    margin-top: 2.5em;
+    margin-top: 2.2em;
     padding-top: 1em;
     padding-bottom: 2em;
     position: relative;

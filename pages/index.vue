@@ -21,20 +21,21 @@
           <b-skeleton-wrapper :loading="loading">
             <template #loading>
               <b-card id="card-loader" v-for="n in 6" :key="n">
-                <b-skeleton width="85%"></b-skeleton>
-                <b-skeleton width="60%"></b-skeleton>
+                <b-skeleton type="avatar" class="float-left mr-2"></b-skeleton>
                 <b-skeleton width="70%"></b-skeleton>
-                <b-skeleton-img no-aspect height="150px" class="mt-2"></b-skeleton-img>
+                <b-skeleton width="50%"></b-skeleton>
+                <b-skeleton-img no-aspect height="150px"></b-skeleton-img>
               </b-card>
             </template>
 
             <!-- <div v-if="loadPost == true"> -->
               <div v-for="post in posts" :key="post.id">                
                 <CardPost 
-                  :title="post.title"
+                  :title="post.title.limit"
                   :createdAt="post.created_at.month"
                   :userName="post.user.name"
                   :slug="post.slug"
+                  :thumbnail="post.thumbnail"
                   ></CardPost>
               </div>
             <!-- </div> -->
@@ -52,30 +53,15 @@
   export default {
     data() {
       return {
-        loading: false,
-        loadingTime: 0,
-        posts: []
+        loadingTime: 2000,
       }
-    },
-    watch: {
-      loading(newValue, oldValue) {
-        if (newValue !== oldValue) {
-          this.clearLoadingTimeInterval()
-
-          if (newValue) {
-            this.$_loadingTimeInterval = setInterval(() => {
-              this.loadingTime++
-            }, 1000)
-          }
-        }
-      },
     },
     created() {
       this.$_loadingTimeInterval = null
     },
     mounted() {
       this.startLoading();
-      this.getPost();
+      this.$store.dispatch('getPost');
     },
     methods: {
       clearLoadingTimeInterval() {
@@ -83,16 +69,16 @@
         this.$_loadingTimeInterval = null
       },
       startLoading() {
-        this.loading = true
+        this.$store.commit('SET_SKELETON', true)
         this.loadingTime = 0
       },
-      async getPost() {
-        const response = await this.$axios.get('api/post');
-        this.posts = response.data.data
-        console.log(response)
-        if (response.status === 200) {
-          this.loading = false
-        }
+    },
+    computed: {
+      posts() {
+        return this.$store.state.posts;
+      },
+      loading() {
+        return this.$store.state.skeleton
       }
     }
   }
@@ -102,7 +88,7 @@
 @import '~/assets/scss/bootstrap.scss';
 // HOME
 #home {
-  padding-top: 9.6em;
+  padding-top: 9.4em;
   padding-bottom: 4.5em;
   .navbar-atas {
     @include position-responsive();
@@ -175,6 +161,8 @@
     }
   }
 }
-
+#card-loader .b-skeleton-img {
+  margin-top: 1em;
+}
 </style>
 

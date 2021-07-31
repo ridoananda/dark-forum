@@ -5,7 +5,7 @@
         id="navbarText"
         class="collapse navbar-collapse justify-content-around navbar-nav"
       >
-        <nuxt-link class="nav-link" to="/" exact>
+        <nuxt-link class="nav-link" @click="getPost" to="/" exact>
           <Iconify icon="home"/>
           <small>Home</small>
         </nuxt-link>
@@ -57,6 +57,20 @@
     </div>
   </nav>
 </template>
+<script>
+export default {
+  methods: {
+    getPost() {
+      this.loading = true;
+    }
+  },
+  computed: {
+      loading() {
+        return this.$store.state.loadSkeleton
+      }
+    }
+}
+</script>
 <style lang="scss" scoped>
 @import '~/assets/scss/bootstrap.scss';
 // NAVBAR BAWAH

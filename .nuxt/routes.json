@@ -1,0 +1,80 @@
+[
+  {
+    "name": "add",
+    "path": "/add",
+    "component": "C:\\\\Users\\\\dell\\\\dark-forum\\\\pages\\\\add.vue",
+    "chunkName": "pages/add"
+  },
+  {
+    "name": "change-password",
+    "path": "/change-password",
+    "component": "C:\\\\Users\\\\dell\\\\dark-forum\\\\pages\\\\change-password.vue",
+    "chunkName": "pages/change-password"
+  },
+  {
+    "name": "edit-profil",
+    "path": "/edit-profil",
+    "component": "C:\\\\Users\\\\dell\\\\dark-forum\\\\pages\\\\edit-profil.vue",
+    "chunkName": "pages/edit-profil"
+  },
+  {
+    "name": "forgot-password",
+    "path": "/forgot-password",
+    "component": "C:\\\\Users\\\\dell\\\\dark-forum\\\\pages\\\\forgot-password.vue",
+    "chunkName": "pages/forgot-password"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "C:\\\\Users\\\\dell\\\\dark-forum\\\\pages\\\\login.vue",
+    "chunkName": "pages/login"
+  },
+  {
+    "name": "notification",
+    "path": "/notification",
+    "component": "C:\\\\Users\\\\dell\\\\dark-forum\\\\pages\\\\notification.vue",
+    "chunkName": "pages/notification"
+  },
+  {
+    "name": "profil",
+    "path": "/profil",
+    "component": "C:\\\\Users\\\\dell\\\\dark-forum\\\\pages\\\\profil.vue",
+    "chunkName": "pages/profil"
+  },
+  {
+    "name": "question",
+    "path": "/question",
+    "component": "C:\\\\Users\\\\dell\\\\dark-forum\\\\pages\\\\question.vue",
+    "chunkName": "pages/question"
+  },
+  {
+    "name": "register",
+    "path": "/register",
+    "component": "C:\\\\Users\\\\dell\\\\dark-forum\\\\pages\\\\register.vue",
+    "chunkName": "pages/register"
+  },
+  {
+    "name": "success",
+    "path": "/success",
+    "component": "C:\\\\Users\\\\dell\\\\dark-forum\\\\pages\\\\success.vue",
+    "chunkName": "pages/success"
+  },
+  {
+    "name": "war",
+    "path": "/war",
+    "component": "C:\\\\Users\\\\dell\\\\dark-forum\\\\pages\\\\war.vue",
+    "chunkName": "pages/war"
+  },
+  {
+    "name": "post-slug",
+    "path": "/post/:slug?",
+    "component": "C:\\\\Users\\\\dell\\\\dark-forum\\\\pages\\\\post\\\\_slug.vue",
+    "chunkName": "pages/post/_slug"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\dell\\\\dark-forum\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
+  }
+]

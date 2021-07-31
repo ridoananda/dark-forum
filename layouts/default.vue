@@ -5,6 +5,8 @@
 </template>
 <script>
 export default {
-	middleware: ['auth']
+	middleware: ['auth'],
+	mounted() {
+	}
 }
 </script>

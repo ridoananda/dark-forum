@@ -12,21 +12,35 @@
             <h4 class="text-center fw-bold">Login</h4>
             <div class="input">
               <input
-                type="text"
-                class="form-control mb-4"
-                placeholder="Email"
                 v-model="email"
-              />
-              <input
                 type="text"
-                class="form-control mb-1"
-                placeholder="Password"
-                v-model="password"
+                :class="isInvalid"
+                placeholder="Email"
               />
+              <small class="invalid-feedback" v-if="errors.email">
+                {{ errors.email[0] }}
+              </small>
+              <input
+                v-model="password"
+                type="password"
+                class="form-control mt-3"
+                placeholder="Password"
+              />
+              <small class="invalid-feedback mb-2" v-if="errors.password">
+                {{ errors.password[0] }}
+              </small>
               <nuxt-link to="forgot-password">Forgot password ?</nuxt-link>
             </div>
             <div class="d-flex justify-content-center mt-3">
-              <button type="submit" class="btn btn-login">Login</button>
+              <button type="submit" class="btn btn-login">
+                <span v-if="loading">
+                  <div class="d-flex align-items-center">
+                    <b-spinner class="mr-2" type="grow" small></b-spinner>
+                    <strong> Verifying</strong>
+                  </div>
+                </span>
+                <span v-else>Login</span>
+              </button>
             </div>
           </form>
           <div class="d-flex justify-content-center mt-3 register">
@@ -46,22 +60,50 @@ export default {
     return {
       email: '',
       password: '',
+      loading: false,
+      errors: [],
+      isInvalid: 'form-control'
     }
   },
   methods: {
     async login() {
+      this.loading = true
       try {
-        await this.$axios.get('sanctum/csrf-cookie');
-        await this.$auth.loginWith('laravelSanctum', {
+        const response = await this.$auth.loginWith('laravelSanctum', {
           data: {
             email: this.email,
             password: this.password
           }
         });
-        this.$router.push('/')
-          
+        if (response.status === 200) {
+          this.loading = false
+          this.$toast.show(`Login success! welcome ${this.$auth.user.name}`, {
+            type: 'success',
+            action : {
+              text : 'Close',
+              onClick : (e, toastObject) => {
+                toastObject.goAway(0);
+              }
+            },
+            duration: 5000
+          })
+          this.$router.push('/')
+        }
       } catch (e) {
-        console.log(e)
+        if (e.response.status === 422) {
+          this.$toast.error(e.response.data.message, {
+            type: 'error',
+            duration: 3000,
+          })
+          this.errors = e.response.data.errors
+          this.isInvalid = 'form-control is-invalid'
+        } else {
+          this.$toast.error('Something went wrong:(', {
+            type: 'error',
+            duration: 3000
+          })
+        }
+        this.loading = false
       }
     }
   }

@@ -1,0 +1,17 @@
+{
+  "CardPost": {
+    "description": "Auto imported from components/CardPost.vue"
+  },
+  "Iconify": {
+    "description": "Auto imported from components/Iconify.vue"
+  },
+  "NavbarAndroid": {
+    "description": "Auto imported from components/NavbarAndroid.vue"
+  },
+  "NavbarComment": {
+    "description": "Auto imported from components/NavbarComment.vue"
+  },
+  "NuxtLogo": {
+    "description": "Auto imported from components/NuxtLogo.vue"
+  }
+}

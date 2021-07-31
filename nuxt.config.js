@@ -58,7 +58,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'https://api-dark-forum.ardyans.com/',
+    baseURL: 'http://localhost:8000/',
     headers: {
       'Accept' : 'application/json'
     },
@@ -69,7 +69,7 @@ export default {
     strategies: {
       'laravelSanctum' : {
         provider: 'laravel/sanctum',
-        url: 'https://api-dark-forum.ardyans.com',
+        url: 'http://localhost:8000',
         endpoints: {
           login: { url: '/login', method: 'post' },
           logout: { url: '/logout', method: 'post' },
