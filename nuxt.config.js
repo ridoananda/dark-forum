@@ -71,7 +71,7 @@ export default {
       'laravelSanctum' : {
         provider: 'laravel/sanctum',
         url: 'https://api-dark-forum.ardyans.com',
-        url: 'http://localhost:8000',
+        //url: 'http://localhost:8000',
         endpoints: {
           login: { url: '/login', method: 'post' },
           logout: { url: '/logout', method: 'post' },
